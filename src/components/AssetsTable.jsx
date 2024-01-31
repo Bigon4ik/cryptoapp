@@ -13,22 +13,13 @@ const columns = [
         title: 'Price, $',
         dataIndex: 'price',
         defaultSortOrder: 'descend',
-        sorter: (a, b) => a.age - b.age,
+        sorter: (a, b) => a.price - b.price,
     },
     {
         title: 'Amount',
-        dataIndex: 'Amount',
-        filters: [
-            {
-                text: 'London',
-                value: 'London',
-            },
-            {
-                text: 'New York',
-                value: 'New York',
-            },
-        ],
-        onFilter: (value, record) => record.address.indexOf(value) === 0,
+        dataIndex: 'amount',
+        defaultSortOrder: 'descend',
+        sorter: (a, b) => a.amount - b.amount,
     },
 ];
 
