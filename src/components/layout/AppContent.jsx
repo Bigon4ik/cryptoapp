@@ -1,5 +1,7 @@
 import {Layout, Typography} from "antd";
 import {useCrypto} from "../../context/crypto-context";
+import PortfolioChart from "../PortfolioChart";
+import AssetsTable from "../AssetsTable";
 
 
 
@@ -24,8 +26,12 @@ export default function AppContent(){
             <Typography.Title level={3} style={{textAlign:'left',color:'#fff'}}>
                 Portfolio :{" "}
                 {assets.map((asset) => asset.amount * cryptoPriceMap[asset.id])
-                    .reduce((acc, v) => (acc+=v),0).toFixed(2)}$
+                    .reduce((acc, v) => (acc+=v),0)
+                    .toFixed(2)}
+                    $
             </Typography.Title>
+            <PortfolioChart/>
+            <AssetsTable/>
         </Layout.Content>
 
     )
